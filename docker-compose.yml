@@ -1,0 +1,26 @@
+version: '3.9'
+services:
+  e-commerce:
+    build: .
+    volumes:
+      - ./:/app
+      # - /app/node_modules
+    environment:
+      - PORT=3000
+    depends_on:
+      - postgres
+    ports:
+      - 3000:3000
+  
+  postgres:
+    container_name: postgres_container
+    image: postgres
+    restart: always
+    environment:
+      - POSTGRES_USER=sachin 
+      - POSTGRES_PASSWORD=sachin
+      - POSTGRES_DB=ecommerce
+    ports: 
+      - '5432:5432'
+    volumes: 
+      - ./docker-volumes/postgres:/var/lib/postgresql
