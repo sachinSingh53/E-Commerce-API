@@ -1,6 +1,6 @@
 app.get('/', async (req, res) => {
     try {
-        const data = await db.query('SELECT * FROM example_table');
+        const data = await db.query("INSERT INTO categories (name, description)VALUES ('Electronics', 'Smartphones, TVs, Laptops, etc.')");
         res.status(200).json(data.rows);
     }
     catch (err) {
