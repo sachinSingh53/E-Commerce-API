@@ -2,12 +2,16 @@ require('dotenv').config();
 const express = require('express');
 const db = require('./db');
 const bodyParser = require('body-parser');
+const cookieParser = require('cookie-parser');
 const categoriesRoutes = require('./routes/categoriesRoutes');
 const productsRoutes = require('./routes/productsRoutes');
+const userRoutes = require('./routes/userRoutes');
+
 
 
 const app = express();
 app.use(bodyParser.json())
+app.use(cookieParser())
 app.use(bodyParser.urlencoded({ extended: false }))
 
 
@@ -31,6 +35,7 @@ app.get('/createTables',async(req,res)=>{
 
 app.use('/api/v1/categories',categoriesRoutes);
 app.use('/api/v1/categories/:id/products',productsRoutes);
+app.use('/api/v1/auth',userRoutes);
 
 
 app.use('*', (req, res) => {
