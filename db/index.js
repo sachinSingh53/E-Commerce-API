@@ -28,6 +28,7 @@ async function createTables() {
                 name VARCHAR(255) NOT NULL,
                 description TEXT,
                 price DECIMAL(10, 2) NOT NULL,
+                availability BOOLEAN NOT NULL,
                 category_id INT,
                 FOREIGN KEY (category_id) REFERENCES categories(category_id)
             );`,

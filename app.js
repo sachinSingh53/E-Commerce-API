@@ -3,7 +3,7 @@ const express = require('express');
 const db = require('./db');
 const bodyParser = require('body-parser');
 const categoriesRoutes = require('./routes/categoriesRoutes');
-
+const productsRoutes = require('./routes/productsRoutes');
 
 
 const app = express();
@@ -30,6 +30,7 @@ app.get('/createTables',async(req,res)=>{
 });
 
 app.use('/api/v1/categories',categoriesRoutes);
+app.use('/api/v1/categories/:id/products',productsRoutes);
 
 
 app.use('*', (req, res) => {
