@@ -1,15 +1,16 @@
 const express = require('express');
 const router = express.Router({mergeParams:true});
 const productsController = require('../controller/productsController');
+const{isLoggedIn} = require('../middlewares/authMiddleware')
 
 
 router.route('/')
     .get(productsController.index)
-    .post(productsController.create);
+    .post(isLoggedIn,productsController.create);
 
 router.route('/:prod_id')
-    .get(productsController.read)  
-    .put(productsController.update)
-    .delete(productsController.delete);
+    .get(isLoggedIn,productsController.read)  
+    .put(isLoggedIn,productsController.update)
+    .delete(isLoggedIn,productsController.delete);
 
 module.exports = router;
