@@ -37,7 +37,7 @@ Before you begin, ensure you have met the following requirements:
 
 ### Postman Collection
 
-[<img src="https://run.pstmn.io/button.svg" alt="Run In Postman" style="width: 128px; height: 32px;">]([https://www.postman.com/grey-desert-231793/workspace/public/collection/25577326-6f52d469-df94-49c1-b4d9-1ca6b266b663?action=share&creator=25577326](https://www.postman.com/grey-desert-231793/workspace/sachin/collection/25577326-6f52d469-df94-49c1-b4d9-1ca6b266b663?action=share&creator=25577326))
+[<img src="https://run.pstmn.io/button.svg" alt="Run In Postman" style="width: 128px; height: 32px;">](https://www.postman.com/grey-desert-231793/workspace/sachin/collection/25577326-6f52d469-df94-49c1-b4d9-1ca6b266b663?action=share&creator=25577326)
 
 
 
