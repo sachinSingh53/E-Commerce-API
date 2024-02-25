@@ -1,6 +1,6 @@
 # E-Commerce API
 
-Build an API set to support e-commerce operations, such as product and category listing, product details, cart management, and order processing. Used  postgreSQL database to manage product/category data, user cart information, and order details.Used JWT for Token-Authentication. 
+Built an API set to support e-commerce operations, such as product and category listing, product details, cart management, and order processing. Used  postgreSQL database to manage product/category data, user cart information, and order details.Used JWT for Token-Authentication. 
 ## Table of Contents
 
 - [Prerequisites](#prerequisites)
