@@ -7,6 +7,7 @@ Built an API set to support e-commerce operations, such as product and category 
 - [Installation](#installation)
 - [Usage](#usage)
 - [Architecture](#architecture)
+- [Documentation](#documentation)
 
 
 ## Prerequisites
@@ -47,8 +48,8 @@ Before you begin, ensure you have met the following requirements:
 
 ![diagram-export-25-2-2024-10_56_00-PM](https://github.com/sachinSingh53/triveous-task/assets/96944676/e6436c73-629d-4c30-8471-0c3e5c596725)
 
-## API Documentation
-[<img src="https://github.com/sachinSingh53/triveous-task/assets/96944676/e945838d-1158-4584-999a-33cad859d43f" alt="Run In Postman" style="width: 128px; height: 128px;">](https://documenter.getpostman.com/view/25577326/2sA2rDvL62)
+## Documentation
+[<img src="https://github.com/sachinSingh53/triveous-task/assets/96944676/e945838d-1158-4584-999a-33cad859d43f" alt="Run In Postman" style="width: 80px; height: 80px;">](https://documenter.getpostman.com/view/25577326/2sA2rDvL62)
 
 
 
