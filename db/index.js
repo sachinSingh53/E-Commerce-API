@@ -40,11 +40,13 @@ async function createTables() {
                 full_name VARCHAR(100),
                 created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
             );`,
-            `CREATE TABLE cart (
-                cart_id SERIAL PRIMARY KEY,
+            `CREATE TABLE orders (
+                order_id SERIAL PRIMARY KEY,
+                product_id INT NOT NULL,
+                quantity INT NOT NULL,
+                price DECIMAL(10, 2) NOT NULL,
+                address TEXT NOT NULL,
                 user_id INT,
-                product_id INT,
-                quantity INT,
                 created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
                 FOREIGN KEY (user_id) REFERENCES users(user_id),
                 FOREIGN KEY (product_id) REFERENCES products(product_id)

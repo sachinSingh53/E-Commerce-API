@@ -9,6 +9,7 @@ const categoriesRoutes = require('./routes/categoriesRoutes');
 const productsRoutes = require('./routes/productsRoutes');
 const userRoutes = require('./routes/userRoutes');
 const cartRoutes = require('./routes/cartRoutes');
+const orderRoutes = require('./routes/orderRoutes');
 
 
 
@@ -29,7 +30,7 @@ app.use(session({
 
 
 
-app.get('/createTables',async(req,res)=>{
+app.get('/api/v1/createTables',async(req,res)=>{
   try{
     await db.createTables();
     res.status(200).json({
@@ -47,6 +48,7 @@ app.get('/createTables',async(req,res)=>{
 app.use('/api/v1/categories',categoriesRoutes);
 app.use('/api/v1/categories/:id/products',productsRoutes);
 app.use('/api/v1/categories/:id/products/:prod_id/cart',cartRoutes);
+app.use('/api/v1/order',orderRoutes);
 app.use('/api/v1/auth',userRoutes);
 
 

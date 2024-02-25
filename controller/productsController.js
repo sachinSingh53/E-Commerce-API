@@ -91,8 +91,7 @@ module.exports.delete = async(req,res)=>{
         ]);
         res.status(200).json({
             status:'success',
-            length:data.rows.length,
-            data: data.rows[0]
+            message:`Successully deleted ${data.rows[0].name}`
         })
     }catch(err){
         res.status(400).json({

@@ -19,18 +19,25 @@ module.exports.index = (req,res)=>{
     }
 }
 
-module.exports.add =  (req, res) => {
+module.exports.add =  async(req, res) => {
     try {
         
         let cart = req.session.cart || [];
         const { prod_id } = req.params;
-        const quantity = Number(req.body.qty);
+        const quantity = 1;
+
+        const data = await db.query('SELECT price FROM products WHERE product_id = $1',[prod_id]);
+        if(data.rowCount===0) throw new Error('Product not found');
+
+
+        const price = Number(data.rows[0].price);
 
         const existingItemIndex = cart.findIndex(item => item.prod_id === prod_id);
         if (existingItemIndex !== -1) {
-            cart[existingItemIndex].quantity += quantity;
+            cart[existingItemIndex].quantity += 1;
+            cart[existingItemIndex].price +=price;
         } else {
-            cart.push({ prod_id, quantity });
+            cart.push({ prod_id, quantity , price });
         }
         req.session.cart = cart;
 

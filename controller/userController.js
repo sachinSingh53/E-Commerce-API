@@ -24,7 +24,8 @@ module.exports.register = async (req, res) => {
             email,
             full_name
         ]);
-        const token = createToken(user.rows[0].id);
+        const token = createToken(user.rows[0].user_id);
+        req.session.user_id = user.rows[0].id;
         //the httpOnly is used so that the cookie can only be modify by http requests
         res.cookie('jwt', token, { httpOnly: true, maxAge: maxAge * 1000 }).status(200).json({
             status: 'success',
@@ -52,7 +53,9 @@ module.exports.login = async (req, res) => {
         if (user.rows.length>0){
             const auth = await bcrypt.compare(password, user.rows[0].password);
             if (auth) {
-                const token = createToken(user.rows[0].id);
+                const token = createToken(user.rows[0].user_id);
+                req.session.user_id = user.rows[0].user_id;
+                
                 return res.cookie('jwt',token,{ httpOnly: true,maxAge:maxAge*1000}).status(200).json({
                     status:'success',
                     message:'Login Sussessfully'
@@ -77,6 +80,7 @@ module.exports.login = async (req, res) => {
 
 module.exports.logout = async (req, res) => {
     try{
+        req.session.user_id = '';
         res.cookie('jwt','',{maxAge:1}).status(200).json({
             message:'goodbye'
         })
