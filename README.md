@@ -3,18 +3,11 @@
 Build an API set to support e-commerce operations, such as product and category listing, product details, cart management, and order processing. Used  postgreSQL database to manage product/category data, user cart information, and order details.Used JWT for Token-Authentication. 
 ## Table of Contents
 
-- [Features](#features)
 - [Prerequisites](#prerequisites)
 - [Installation](#installation)
 - [Usage](#usage)
-- [API Endpoints](#endpoints)
+- [Architecture](#architecture)
 
-
-## Features
-- **User Authentication:** Secure sign-up and login system for both hosts and guests.
-- **Accommodation Listings:** Hosts can create listings for their properties, including details like location, amenities, and pricing.
-- **Search nearBy houses:** Guests can search for available accommodations, book stays, and manage their reservations.
-- **Reviews and Ratings:** Guests can leave reviews and ratings for accommodations, helping future guests make informed decisions.
 
 ## Prerequisites
 
@@ -28,13 +21,13 @@ Before you begin, ensure you have met the following requirements:
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/sachinSingh53/E-Commerce.git
+   git clone https://github.com/sachinSingh53/triveous-task.git
    
    
-2. Build the Image and run the container:
+2. Build the Image and run the containers:
 
    ```bash
-   docker-compose -f docker.compose.yml -f docker.compose.dev.yml up -d --build
+   docker-compose up -d --build
 
 ## Usage
 
